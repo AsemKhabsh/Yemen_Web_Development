@@ -1,14 +1,26 @@
+:root {
+    --mainColor: #861111b6;
+    --secondColor: #a8a3a3e1;
+    --threeColor:#C8D5DB;
+}
+
 *{
     direction: rtl;
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
 }
 .header {
     display: flex;
-    margin: 0 20px;
+    margin: 0 0 100px;
     justify-content:space-between;
-    width: 98%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    box-shadow: 0px 0px 15px 1px var(--secondColor);
+    background-color: #ffffff;
+    font-size: 1.2vw;
 }
 
 
@@ -16,7 +28,8 @@
     width: 80px;
     border-radius: 100%;
     height: 80px;
-    margin-top: 0;
+    margin-top: 3px;
+    margin-right: 10px;
 }
 
 .header ul {
@@ -33,28 +46,48 @@ a {
 }
 
 .login{
-    padding: 7px;
+    padding: 3%;
     width: 15vw;
-    margin: 15px;
+    /* margin: 15px; */
+    margin: 8%;
     margin-left: 5vw;
     border: none;
-    background-color: #861111b6;
+    background-color: var(--mainColor);
     color: white;
     border-radius: 20px;
+    font-size: 1vw;
     font-weight:bold ;
+    transition-duration: 0.5s;
+    transition-property: all;
+}
+.login:hover {
+    background-color: var(--threeColor);
+    color: var(--mainColor);
+    border: 1px solid var(--mainColor);
+    margin: 30px;
+    padding: 10px;
 }
 
 .photo img {
+    margin-top: 90px;
     width: 100vw;
+    
 }
 
 
 #about {
     max-width: 900px;
     margin: auto;
+    margin-top: 2%;
     padding: 10px;
     border-radius: 20px;
-    box-shadow: 7px 7px 4px #888888;
+    box-shadow: 0px 0px 15px 1px var(--secondColor);
+    transition-property: all;
+    
+}
+#about:hover {
+   
+    font-size: large;
 }
 
 #about h2 {
@@ -64,7 +97,7 @@ a {
 #about p{
     text-align: justify;
     margin: 10px;
-     font-size: 1em;
+    font-size: 1em;
     font-weight: 325;
 }
 #about ul {
@@ -85,12 +118,11 @@ a {
     gap: 3%;
     /* width: 94vw; */
     max-width: 900px;
-    margin: auto;
-    margin-bottom: 50px;
+    margin: 3% auto 50px;
     /* margin: 2vw; */
     padding: 10px;
     border-radius: 20px;
-    box-shadow: 7px 7px 4px #888888;
+    box-shadow: 0px 0px 15px 1px #888888;
 }
 
 .projects div {
@@ -98,12 +130,12 @@ a {
     margin: 20px 1vw;
     background-color: rgba(138, 137, 137, 0.162);
     border-radius: 20px;
-    border: 1px solid rgb(138, 137, 137);
+    border: 1px solid var(--secondColor);
 }
 
 .projects_heading , .about_header , .skills_heading{
     text-align: center;
-    margin: 25px 20px;
+    margin: 100px 20px 30px;
     font-weight: 400;
 }
 
@@ -122,6 +154,14 @@ a {
     text-align:justify;
 }
 
+.logos , .jomah , .cv {
+    transition-duration: 0.6s;
+}
+
+.logos:hover , .jomah:hover , .cv:hover {
+    margin: -50px 0 0;
+}
+
 .projects img {
     width: 100%;
     height: 50%px;
@@ -131,25 +171,28 @@ a {
 
 #skills {
     max-width: 900px;
-    margin: auto;
+    margin: 3% auto 50px;
     padding: 10px;
     border-radius: 20px;
-    box-shadow: 7px 7px 4px #888888;
-    margin-bottom: 50px;
+    box-shadow: 0px 0px 15px 1px #888888;
 }
 
 .progress-bar_html, .progress-bar_css, .progress-bar_sql, .progress-bar_Ps, .progress-bar_Ai, .progress-bar_Id {
-    /* width: 200px; */
+    width: 200px;
     height: 20px;
     background-color: #ddd;
     border-radius: 10px;
     margin: 10px 0;
 }
 
+#skills  .progress-bar_html, .progress-bar_css, .progress-bar_sql, .progress-bar_Ps, .progress-bar_Ai, .progress-bar_Id {
+    text-align: center;
+}
+
 .progress-bar_html::after {
     content: "";
     display: block;
-    width: 98%; 
+    width: 95%; 
     height: 100%;
     background-color: #4CAF50;
     border-radius: 10px;
@@ -198,13 +241,13 @@ a {
 #contact {
     /* width: 94vw;
     margin: 2vw; */
-    background-color: #BDCBD4;
+    background-color: var(--mainColor);
     text-align: center;
     padding: 1px;
 }
 #contact h2 {
     margin: 20px;
-    color: #861111b6;
+    color: var(--threeColor);
 }
 
 #contact input, textarea {
@@ -213,32 +256,52 @@ a {
     border-radius: 100px;
     padding: 5px 10px;
     border: none;
-    background-color: #a8a3a3e1;
-    border-bottom: 3px solid #861111b6;
-    height: 20px;
+    background-color: var(--secondColor);
+    border-bottom: 3px solid var(--threeColor);
+    /* height: 20px; */
     
 }
 #contact button {
     width: 220px;
     font-weight:bolder;
     font-size: 20px;
-    background-color: #861111b6;
-    color: #ddd;
+    background-color: var(--threeColor);
+    color: var(--mainColor);
     border: 0;
     border-radius: 20px;
     padding: 5px;
+    transition-duration: 0.7s;
 }
  input::placeholder ,textarea::placeholder {
     color: #ffffff;
  }
 
  #contact button:hover {
-    background-color: #ffffff;
-    color: #861111b6;
-    /* border: 2px solid #861111b6; */
+    background-color: var(--mainColor);
+    color: var(--threeColor);
+    border: 2px solid var(--threeColor); 
  }
 
  #contact p {
    margin: 20px;
+   color: var(--threeColor);
    
  }
+
+ /* .spicial {
+    position: relative;
+ }
+
+ .bord {
+    height: 60vh;
+    z-index: 1;
+ }
+ .ridus{
+    position: relative;
+    top: 90px;
+    background-color: #d98484;
+    height: 60vh;
+    border-bottom-right-radius: 80% 80%;
+
+ } */
+ 
